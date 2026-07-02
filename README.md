@@ -4,45 +4,41 @@ A pure Skill reference package for AI tools (TRAE, Claude Code, Cursor, Codex, O
 
 ## Installation
 
-Clone into the project-level skills directory of your AI tool:
-
-```bash
-git clone git@github.com:ljcoder2015/obsidian-sheet-plus-skill.git
-```
+Copy this directory into the project-level skills directory:
 
 **TRAE:**
 ```bash
-git clone git@github.com:ljcoder2015/obsidian-sheet-plus-skill.git .trae-cn/skills/obsidian-sheet-plus
+cp -r obsidian-sheet-plus-skill .trae-cn/skills/obsidian-sheet-plus
 ```
 
 **Claude Code:**
 ```bash
-git clone git@github.com:ljcoder2015/obsidian-sheet-plus-skill.git .claude/skills/obsidian-sheet-plus
+cp -r obsidian-sheet-plus-skill .claude/skills/obsidian-sheet-plus
 ```
 
 **Cursor:**
 ```bash
-git clone git@github.com:ljcoder2015/obsidian-sheet-plus-skill.git .cursor/skills/obsidian-sheet-plus
+cp -r obsidian-sheet-plus-skill .cursor/skills/obsidian-sheet-plus
 ```
 
 **Codex (OpenAI):**
 ```bash
-git clone git@github.com:ljcoder2015/obsidian-sheet-plus-skill.git .codex/skills/obsidian-sheet-plus
+cp -r obsidian-sheet-plus-skill .codex/skills/obsidian-sheet-plus
 ```
 
 **OpenCode:**
 ```bash
-git clone git@github.com:ljcoder2015/obsidian-sheet-plus-skill.git .opencode/skills/obsidian-sheet-plus
+cp -r obsidian-sheet-plus-skill .opencode/skills/obsidian-sheet-plus
 ```
 
 **Copilot CLI (GitHub):**
 ```bash
-git clone git@github.com:ljcoder2015/obsidian-sheet-plus-skill.git .github/skills/obsidian-sheet-plus
+cp -r obsidian-sheet-plus-skill .github/skills/obsidian-sheet-plus
 ```
 
 **Gemini CLI (Google):**
 ```bash
-git clone git@github.com:ljcoder2015/obsidian-sheet-plus-skill.git .gemini/skills/obsidian-sheet-plus
+cp -r obsidian-sheet-plus-skill .gemini/skills/obsidian-sheet-plus
 ```
 
 ## Prerequisites
