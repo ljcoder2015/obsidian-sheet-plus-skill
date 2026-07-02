@@ -4,44 +4,42 @@ A pure Skill reference package for AI tools (TRAE, Claude Code, Cursor, Codex, O
 
 ## Installation
 
-Copy this directory into the AI tool's skills directory:
+Copy this directory into the project-level skills directory:
 
 **TRAE:**
 ```bash
-cp -r apps/obsidian-sheet-plus-skill ~/.trae-cn/skills/obsidian-sheet-plus
+cp -r apps/obsidian-sheet-plus-skill .trae-cn/skills/obsidian-sheet-plus
 ```
 
 **Claude Code:**
 ```bash
-cp -r apps/obsidian-sheet-plus-skill ~/.claude/skills/obsidian-sheet-plus
+cp -r apps/obsidian-sheet-plus-skill .claude/skills/obsidian-sheet-plus
 ```
 
 **Cursor:**
 ```bash
-cp -r apps/obsidian-sheet-plus-skill ~/.cursor/skills/obsidian-sheet-plus
+cp -r apps/obsidian-sheet-plus-skill .cursor/skills/obsidian-sheet-plus
 ```
 
 **Codex (OpenAI):**
 ```bash
-cp -r apps/obsidian-sheet-plus-skill ~/.codex/skills/obsidian-sheet-plus
+cp -r apps/obsidian-sheet-plus-skill .codex/skills/obsidian-sheet-plus
 ```
 
 **OpenCode:**
 ```bash
-cp -r apps/obsidian-sheet-plus-skill ~/.config/opencode/skills/obsidian-sheet-plus
+cp -r apps/obsidian-sheet-plus-skill .opencode/skills/obsidian-sheet-plus
 ```
 
 **Copilot CLI (GitHub):**
 ```bash
-cp -r apps/obsidian-sheet-plus-skill ~/.copilot/skills/obsidian-sheet-plus
+cp -r apps/obsidian-sheet-plus-skill .github/skills/obsidian-sheet-plus
 ```
 
 **Gemini CLI (Google):**
 ```bash
-cp -r apps/obsidian-sheet-plus-skill ~/.gemini/skills/obsidian-sheet-plus
+cp -r apps/obsidian-sheet-plus-skill .gemini/skills/obsidian-sheet-plus
 ```
-
-> **Note:** SKILL.md format is compatible across all these tools. Install once, use everywhere. Some tools also support project-level installation (e.g., `.claude/skills/`, `.github/skills/`, `.gemini/skills/` inside your repo).
 
 ## Prerequisites
 
