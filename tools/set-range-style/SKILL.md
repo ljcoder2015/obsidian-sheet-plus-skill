@@ -35,13 +35,15 @@ Set range styles including font, color, background, borders, alignment, text rot
 | fontFamily | string | Font family | `"Arial"` |
 | fontWeight | string | Font weight | `"normal"` / `"bold"` |
 | fontStyle | string | Font style | `"normal"` / `"italic"` |
-| fontLine | string | Font line style | `"none"` / `"single"` / `"double"` |
-| textDecoration | string | Text decoration | `"none"` / `"underline"` / `"line-through"` |
-| horizontalAlignment | string | Horizontal alignment | `"left"` / `"center"` / `"right"` |
-| verticalAlignment | string | Vertical alignment | `"top"` / `"middle"` / `"bottom"` |
+| fontLine | string | Font line style (alias of `textDecoration`) | `"none"` / `"underline"` / `"line-through"`; Excel-style `"single"` / `"double"` are accepted and mean `"underline"` |
+| textDecoration | string | Text decoration (alias of `fontLine`) | `"none"` / `"underline"` / `"line-through"` |
+| horizontalAlignment | string | Horizontal alignment | `"left"` / `"center"` / `"right"` (alias `horizontalAlign`) |
+| verticalAlignment | string | Vertical alignment | `"top"` / `"middle"` / `"bottom"` (alias `verticalAlign`) |
 | textRotation | number | Text rotation angle | `0` ~ `360` |
-| wrap | boolean | Text wrapping | `true` / `false` |
+| wrap | boolean | Text wrapping | `true` / `false` (both are applied; `false` cancels wrapping) |
 | border | object | Border style | See border description below |
+
+> `fontLine` and `textDecoration` describe the same thing — pass either one. Values outside the documented sets are rejected with an explicit `success: false` error instead of being silently ignored.
 
 ### border Object Properties
 
@@ -56,10 +58,12 @@ Set range styles including font, color, background, borders, alignment, text rot
 {
   "success": true,
   "data": {
-    "range": "A1:B10"
+    "range": "A1:B10",
+    "appliedStyles": ["backgroundColor", "fontColor", "fontWeight", "horizontalAlignment"]
   }
 }
 ```
+`appliedStyles` lists the style dimensions that were actually written, so a caller never has to guess whether a property landed.
 
 ## Example
 

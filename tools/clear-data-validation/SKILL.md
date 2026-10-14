@@ -6,6 +6,8 @@ description: Use when removing data validation rules from cells — to allow unr
 # clear-data-validation
 Remove data validation rules from the specified range. After removal, cells return to unrestricted input mode.
 
+Matching is by **intersection**: one call removes every rule whose applied range overlaps the given range. Passing a superset works — `F1:H5` clears separate rules laid down on `F1:F5`, `G1:G5` and `H1:H5` in a single call, no repeated calls needed. Rules are removed as a whole, so a rule that only partially overlaps the range is removed entirely.
+
 ## Prerequisites
 - Obsidian is running, Sheet Plus plugin is enabled
 - Verified API availability via `GET /`
@@ -29,10 +31,12 @@ Remove data validation rules from the specified range. After removal, cells retu
 {
   "success": true,
   "data": {
-    "range": "A1:A10"
+    "range": "A1:A10",
+    "rulesRemoved": 1
   }
 }
 ```
+`rulesRemoved` is the number of rules that were actually deleted; `0` (with message `No data validation found in the specified range`) means nothing in that range had a rule.
 
 ## Example
 ```bash

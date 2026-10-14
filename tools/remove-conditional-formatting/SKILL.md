@@ -6,6 +6,8 @@ description: Use when removing conditional formatting rules from a specific rang
 # remove-conditional-formatting
 Removes conditional formatting rules from a specified range only. Other ranges are unaffected.
 
+Matching is by **intersection**: every rule whose applied range overlaps the given range is removed in a single call. A rule does not have to sit exactly on the given range — passing a superset (e.g. `A1:C5` for rules on `A1:A5`, `B1:B5` and `C1:C5`) removes all of them. Rules are removed as a whole, so a rule that only partially overlaps the range is removed entirely.
+
 ## Prerequisites
 - Obsidian is running, Sheet Plus plugin is enabled
 - Verified API availability via `GET /`
@@ -29,10 +31,12 @@ Removes conditional formatting rules from a specified range only. Other ranges a
 {
   "success": true,
   "data": {
-    "range": "B1:B10"
+    "range": "B1:B10",
+    "rulesRemoved": 1
   }
 }
 ```
+`rulesRemoved` is the number of rules that were actually deleted; `0` means nothing in that range had a rule.
 
 ## Example
 ```bash
